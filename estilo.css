@@ -1,0 +1,251 @@
+/* Reset básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4; /* Uma cor de fundo suave para a página */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* ---------------------------------------------------- */
+/* --- ESTILOS DO HEADER (CABEÇALHO) ------------------ */
+/* ---------------------------------------------------- */
+header {
+    background-color: rgba(161, 0, 0, 0.836); /* Fundo vermelho escuro */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Alinha os filhos (div com imagem/texto) em coluna */
+    align-items: center; /* Centraliza horizontalmente os filhos */
+    justify-content: center; /* Centraliza verticalmente (se houver espaço extra) */
+    text-align: center; /* Garante que o texto dentro de h1/h2 seja centralizado */
+}
+
+/* Container que envolve a imagem e as informações do header */
+header > div {
+    display: flex;
+    flex-direction: column; /* Empilha a imagem e o bloco info-header */
+    align-items: center; /* Centraliza horizontalmente a imagem e o bloco info-header */
+    gap: 10px; /* Espaçamento entre a imagem e o info-header */
+}
+
+/* Estilos para a imagem específica dentro do header */
+.LanchoneteProva {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    /* margin-bottom: 10px; -- Removido, pois o gap no pai já cuida disso */
+}
+
+/* Container para os textos do cabeçalho (H1 e H2) */
+.info-header {
+    text-align: center; /* Centraliza os textos H1 e H2 */
+}
+
+.info-header h1 {
+    margin: 0; /* Remove a margem padrão do H1 */
+    font-size: 2.5em;
+}
+
+.info-header h2 {
+    margin: 5px 0 0 0; /* Espaçamento abaixo do H1 */
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------- */
+/* --- ESTILOS DA NAV (NAVEGAÇÃO) --- */
+/* ---------------------------------------------------- */
+nav {
+    background-color: #a50a0a; /* Fundo verde */
+    padding: 10px 0; /* Padding superior e inferior */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para destacar a navegação */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 25px; /* Espaçamento entre os links (ajustado para melhor responsividade) */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    color: rgb(207, 2, 2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------------------------------------------------- */
+/* --- ESTILOS DA MAIN (CONTEÚDO PRINCIPAL) --- */
+/* ---------------------------------------------------- */
+main {
+    display: grid; /* Ativa o Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px; /* Preenchimento interno do container main */
+    max-width: 1200px; /* Largura máxima para centralizar o conteúdo */
+    margin: 20px auto; /* Centraliza o main na página e adiciona margem superior/inferior */
+}
+
+/* Estilos gerais para todas as sections (os blocos de menu) dentro da main */
+main section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo da section em coluna */
+}
+
+/* Estilos específicos para o quinto elemento (Sugestão, elogios e críticas) */
+main section:last-child {
+    grid-column: 1 / span 2; /* Faz com que o último item ocupe as duas colunas */
+}
+
+/* Estilos para os títulos (h2) dentro das sections */
+main section h2 {
+    color: rgba(180, 8, 8, 0.795);
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilos para as listas (ul) dentro das sections */
+main section ul {
+    list-style: none; /* Remove os marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Faz a lista ocupar o espaço disponível para alinhar as caixas */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaçamento entre os itens da lista */
+}
+
+main section ul li {
+    font-size: 0.95em;
+    color: #555;
+    display: flex;
+    justify-content: space-between; /* Alinha o texto do item e o preço */
+    padding: 3px 0;
+    border-bottom: 1px dashed #eee; /* Linha tracejada para separar os itens */
+}
+
+main section ul li:last-child {
+    border-bottom: none; /* Remove a borda do último item da lista */
+}
+
+/* Estilos para o formulário dentro da última section */
+main section:last-child form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+main section:last-child input[type="email"],
+main section:last-child textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+main section:last-child button[type="submit"] {
+    background-color: rgb(204, 45, 45);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+main section:last-child button[type="submit"]:hover {
+    background-color: rgb(170, 30, 30);
+}
+
+/* ---------------------------------------------------- */
+/* --- ESTILOS DO FOOTER (RODAPÉ) --- */
+/* ---------------------------------------------------- */
+footer {
+    background-color: rgba(161, 0, 0, 0.76);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 20px; /* Adiciona um espaço acima do rodapé */
+}
+
+/* ---------------------------------------------------- */
+/* --- ESTILOS RESPONSIVOS (MEDIA QUERIES) --- */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Ajustes para o cabeçalho em telas menores */
+    header {
+        padding: 15px;
+    }
+
+    /* O container da imagem e texto já é flex-direction: column, então não precisa de alteração aqui. */
+    /* .info-header também já é text-align: center, então não precisa de alteração. */
+
+    /* Ajustes para a navegação em telas menores */
+    nav {
+        padding: 8px 0;
+    }
+    nav a {
+        margin: 0 8px; /* Reduz o espaçamento entre os links */
+        font-size: 0.9em;
+        padding: 5px 8px;
+    }
+
+    /* Ajustes para a main em telas menores */
+    main {
+        grid-template-columns: 1fr; /* Os itens da main ficam em uma única coluna */
+        padding: 10px;
+        gap: 15px;
+    }
+
+    main section:last-child {
+        grid-column: 1; /* O formulário ocupa apenas uma coluna */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes ainda menores para telas de celular */
+    .LanchoneteProva {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-header h1 {
+        font-size: 2em;
+    }
+
+    .info-header h2 {
+        font-size: 1em;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 0.8em;
+        padding: 3px 6px;
+    }
+    nav {
+        display: flex; /* Para flexbox na nav */
+        flex-wrap: wrap; /* Permite que os links quebrem linha */
+        justify-content: center; /* Centraliza os links */
+        gap: 5px; /* Espaçamento entre os links quando quebram linha */
+    }
+}
